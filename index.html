@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Davi Pereira | Currículo </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --gray: #95a5a6;
+            --background: #f9f9f9;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--background);
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            min-height: 100vh;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            background: var(--primary);
+            color: white;
+            padding: 40px 30px;
+        }
+        
+        .profile {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 20px;
+        }
+        
+        .name {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .title {
+            font-size: 16px;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            margin-bottom: 40px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--secondary);
+        }
+        
+        .skills {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--secondary);
+        }
+        
+        .skill-item {
+            margin-bottom: 15px;
+        }
+        
+        .skill-name {
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        
+        .skill-bar {
+            height: 6px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 3px;
+        }
+        
+        .skill-level {
+            height: 100%;
+            background: var(--secondary);
+            border-radius: 3px;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 40px;
+            background: white;
+        }
+        
+        .about {
+            margin-bottom: 40px;
+        }
+        
+        .about p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .experience, .education {
+            margin-bottom: 40px;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: var(--light);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .timeline-icon {
+            position: absolute;
+            left: -30px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 10px;
+        }
+        
+        .timeline-date {
+            font-size: 14px;
+            color: var(--secondary);
+            margin-bottom: 5px;
+        }
+        
+        .timeline-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-subtitle {
+            font-size: 16px;
+            color: var(--gray);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        .timeline-text {
+            font-size: 14px;
+            color: var(--dark);
+        }
+        
+        .timeline-text ul {
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+        
+        .timeline-text li {
+            margin-bottom: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                padding: 30px 20px;
+            }
+            
+            .main-content {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="Imagem 1391481.jpeg" alt="Foto de Perfil" class="profile-img">
+                <h1 class="name">Davi Pereira</h1>
+                <p class="title">Cargo Atual - Estagiário</p>
+            </div>
+            
+            <div class="contact-info">
+                <h2 class="section-title">Contato</h2>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <p>davioliveirapereira05@gmail.com</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                        <p>(19) 99908-7733</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <p>Piracicaba, São Paulo</p>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="skills">
+                <h2 class="section-title">Habilidades</h2>
+
+                <div class="skill-item">
+                    <div class="skill-name">Pacote Office</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 40%;"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-name">HTML/CSS</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 50%;"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-name">JavaScript</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 30%;"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-name">UI/UX Design</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 60%;"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="languages">
+                <h2 class="section-title">Idiomas</h2>
+                
+                <div class="skill-item">
+                    <div class="skill-name">Português</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 100%;"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-name">Inglês</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 35%;"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-name">Espanhol</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 20%;"></div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <section class="about">
+                <h2 class="section-title">Sobre Mim</h2>
+                <p>Estou em busca de uma oportunidade de emprego mais direcionada para minha área de estudo, atualmente estou cursando ciência da computação.
+                </p>
+            </section>
+            
+            <section class="experience">
+                <h2 class="section-title">Experiência Profissional</h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="timeline-date">Novembro 2024</div>
+                        <h3 class="timeline-title">Cargo Atual</h3>
+                        <p class="timeline-subtitle">HUB de Piracicaba</p>
+                        <div class="timeline-text">
+                            <ul>
+                                <li>Funções - Atendimento ao público, Gerenciamento de Planilha, Tour com novos integrantes, 
+                                    Fazer posts nas redes sociais do HUB, Repositor da mesa de suprimentos e Cadastro de novos 
+                                    usuários do HUB.  
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="timeline-date">Setembro 2023 até Novembro de 2024  </div>
+                        <h3 class="timeline-title">Cargo Anterior</h3>
+                        <p class="timeline-subtitle">Imobiliária Remax Thema </p>
+                        <div class="timeline-text">
+                            <ul>
+                                <li>Funções – Atendimento ao Publico presencial e telefônico, conferência de documentos 
+                                    contratuais, consulta de certidões de clientes, atualização do cadastro de imóveis, 
+                                    monitoramento de prazos e controle de suprimentos.  
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="education">
+                <h2 class="section-title">Formação Acadêmica</h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="timeline-date">Janeiro 2024 até Janeiro de 2028</div>
+                        <h3 class="timeline-title">Ciência da Computação</h3>
+                        <p class="timeline-subtitle">EEP – Escola de Engenharia de Piracicaba </p>
+                        <div class="timeline-text">
+                            <p>Ainda cursando Ciência da Computação.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="timeline-date">Janeiro de 2012 até Dezembro de 2023</div>
+                        <h3 class="timeline-title">Ensino fundamental 1, 2 e Ensino Médio</h3>
+                        <p class="timeline-subtitle">Colégio Metodista Piracicabano</p>
+                        <div class="timeline-text">
+                            <p>Ensino básico concluído.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+                <br>
+
+                <h2 class="section-title">Cursos Extracurriculares </h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="timeline-date">Concluído 2022</div>
+                        <h3 class="timeline-title">Operador de Microcomputador</h3>
+                        <p class="timeline-subtitle">SENAI - Mario Henrique Simonsen</p>
+                        <div class="timeline-text">
+                            <p>Curso com duração de 160 horas presencial.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="timeline-date">Concluído 2022</div>
+                        <h3 class="timeline-title">Implantação de Serviços em Nuvem - Google Cloud Foundations</h3>
+                        <p class="timeline-subtitle">SENAI Mario Dedini</p>
+                        <div class="timeline-text">
+                            <p>Curso com duração de 40 horas presencial.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="timeline-date">Concluído 2022</div>
+                        <h3 class="timeline-title">Manutenção de Microcomputadores</h3>
+                        <p class="timeline-subtitle">SENAC Piracicaba</p>
+                        <div class="timeline-text">
+                            <p>Curso com duração de 40 horas presencial.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="timeline-date">Concluído 2022</div>
+                        <h3 class="timeline-title">ROBOMIND - Robótica Educacional</h3>
+                        <p class="timeline-subtitle">Colégio Metodista Piracicabano</p>
+                        <div class="timeline-text">
+                            <p>Curso com duração de 40.5 horas presencial.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/davi-pereira-b37233283/" class="social-link">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/Scramjat" class="social-link">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
