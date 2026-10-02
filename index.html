@@ -3,537 +3,486 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Davi Pereira | Currículo </title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --light: #ecf0f1;
-            --dark: #2c3e50;
-            --gray: #95a5a6;
-            --background: #f9f9f9;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
-            background-color: var(--background);
-        }
-        
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 350px 1fr;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            min-height: 100vh;
-        }
-        
-        /* Sidebar */
-        .sidebar {
-            background: var(--primary);
-            color: white;
-            padding: 40px 30px;
-        }
-        
-        .profile {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid rgba(255, 255, 255, 0.2);
-            margin-bottom: 20px;
-        }
-        
-        .name {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-        
-        .title {
-            font-size: 16px;
-            color: var(--secondary);
-            margin-bottom: 20px;
-        }
-        
-        .contact-info {
-            margin-bottom: 40px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-        
-        .contact-icon {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            color: var(--secondary);
-        }
-        
-        .skills {
-            margin-bottom: 40px;
-        }
-        
-        .section-title {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .section-title:after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px;
-            height: 2px;
-            background: var(--secondary);
-        }
-        
-        .skill-item {
-            margin-bottom: 15px;
-        }
-        
-        .skill-name {
-            margin-bottom: 5px;
-            font-size: 14px;
-        }
-        
-        .skill-bar {
-            height: 6px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 3px;
-        }
-        
-        .skill-level {
-            height: 100%;
-            background: var(--secondary);
-            border-radius: 3px;
-        }
-        
-        /* Main Content */
-        .main-content {
-            padding: 40px;
-            background: white;
-        }
-        
-        .about {
-            margin-bottom: 40px;
-        }
-        
-        .about p {
-            margin-bottom: 15px;
-            text-align: justify;
-        }
-        
-        .experience, .education {
-            margin-bottom: 40px;
-        }
-        
-        .timeline {
-            position: relative;
-            padding-left: 30px;
-        }
-        
-        .timeline:before {
-            content: '';
-            position: absolute;
-            left: 7px;
-            top: 0;
-            height: 100%;
-            width: 2px;
-            background: var(--light);
-        }
-        
-        .timeline-item {
-            position: relative;
-            margin-bottom: 30px;
-        }
-        
-        .timeline-item:last-child {
-            margin-bottom: 0;
-        }
-        
-        .timeline-icon {
-            position: absolute;
-            left: -30px;
-            top: 0;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: var(--secondary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 10px;
-        }
-        
-        .timeline-date {
-            font-size: 14px;
-            color: var(--secondary);
-            margin-bottom: 5px;
-        }
-        
-        .timeline-title {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-        
-        .timeline-subtitle {
-            font-size: 16px;
-            color: var(--gray);
-            margin-bottom: 10px;
-            font-weight: 500;
-        }
-        
-        .timeline-text {
-            font-size: 14px;
-            color: var(--dark);
-        }
-        
-        .timeline-text ul {
-            padding-left: 20px;
-            margin-top: 5px;
-        }
-        
-        .timeline-text li {
-            margin-bottom: 5px;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
-        }
-        
-        .social-link {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--dark);
-            transition: all 0.3s ease;
-        }
-        
-        .social-link:hover {
-            background: var(--secondary);
-            color: white;
-            transform: translateY(-3px);
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr;
+    <title>Davi Pereira | Currículo</title>
+    <meta name="description" content="Currículo de Davi Pereira — estudante de Ciência da Computação em Piracicaba-SP.">
+
+    <!-- Aplica o tema antes de renderizar para evitar "piscada" -->
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('theme');
+                var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                document.documentElement.dataset.theme = saved || (prefersDark ? 'dark' : 'light');
+            } catch (e) {
+                document.documentElement.dataset.theme = 'light';
             }
-            
-            .sidebar {
-                padding: 30px 20px;
-            }
-            
-            .main-content {
-                padding: 30px 20px;
-            }
-        }
-    </style>
+        })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <div class="profile">
-                <img src="Imagem 1391481.jpeg" alt="Foto de Perfil" class="profile-img">
-                <h1 class="name">Davi Pereira</h1>
-                <p class="title">Cargo Atual - Estagiário</p>
-            </div>
-            
-            <div class="contact-info">
-                <h2 class="section-title">Contato</h2>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div>
-                        <p>davioliveirapereira05@gmail.com</p>
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone"></i>
-                    </div>
-                    <div>
-                        <p>(19) 99908-7733</p>
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <div>
-                        <p>Piracicaba, São Paulo</p>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="skills">
-                <h2 class="section-title">Habilidades</h2>
+    <!-- Barra de progresso de leitura -->
+    <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
 
-                <div class="skill-item">
-                    <div class="skill-name">Pacote Office</div>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 40%;"></div>
-                    </div>
-                </div>
-                
-                <div class="skill-item">
-                    <div class="skill-name">HTML/CSS</div>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 30%;"></div>
-                    </div>
-                </div>
-                
-                <div class="skill-item">
-                    <div class="skill-name">JavaScript</div>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 20%;"></div>
-                    </div>
-                </div>
+    <!-- Fundo interativo -->
+    <canvas id="bg" aria-hidden="true"></canvas>
+    <div class="glow" aria-hidden="true"></div>
 
-                <div class="skill-item">
-                    <div class="skill-name">PHP/SQL</div>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 30%;"></div>
-                    </div>
+    <!-- Navegação -->
+    <header class="nav" id="nav">
+        <a href="#inicio" class="logo" aria-label="Início">
+            <span class="logo-mark">DP</span>
+        </a>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#sobre">Sobre</a>
+            <a href="#experiencia">Experiência</a>
+            <a href="#formacao">Formação</a>
+            <a href="#cursos">Cursos</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#contato">Contato</a>
+        </nav>
+
+        <div class="nav-actions">
+            <button class="icon-btn theme-toggle" id="themeToggle" aria-label="Alternar modo claro/escuro" title="Alternar tema (T)">
+                <i class="fa-solid fa-sun icon-sun"></i>
+                <i class="fa-solid fa-moon icon-moon"></i>
+            </button>
+            <button class="icon-btn menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero" id="inicio">
+            <div class="hero-text">
+                <p class="eyebrow reveal"><span class="pulse"></span> Disponível no período diurno</p>
+                <h1 class="hero-title reveal">
+                    <span class="hello">Olá, eu sou<br></span>
+                    <span class="gradient-text">Davi Pereira</span>
+                </h1>
+
+                <!-- Cabeçalho que aparece só na impressão / PDF -->
+                <div class="print-only print-header">
+                    <p class="print-role">Estudante de Ciência da Computação · Assistente de Processos</p>
+                    <ul class="print-contact">
+                        <li><i class="fa-solid fa-envelope"></i> davioliveirapereira05@gmail.com</li>
+                        <li><i class="fa-solid fa-phone"></i> +55 (19) 99908-7733</li>
+                        <li><i class="fa-solid fa-location-dot"></i> Vila Monteiro, Piracicaba – SP</li>
+                        <li><i class="fa-brands fa-github"></i> github.com/Scramjat</li>
+                        <li><i class="fa-brands fa-linkedin"></i> linkedin.com/in/davi-pereira-b37233283</li>
+                    </ul>
                 </div>
-                
-                <div class="skill-item">
-                    <div class="skill-name">UI/UX Design</div>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 60%;"></div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="languages">
-                <h2 class="section-title">Idiomas</h2>
-                
-                <div class="skill-item">
-                    <div class="skill-name">Português</div>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 100%;"></div>
-                    </div>
-                </div>
-                
-                <div class="skill-item">
-                    <div class="skill-name">Inglês</div>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 35%;"></div>
-                    </div>
-                </div>
-                
-                <div class="skill-item">
-                    <div class="skill-name">Espanhol</div>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 15%;"></div>
-                    </div>
-                </div>
-            </div>
-        </aside>
-        
-        <!-- Main Content -->
-        <main class="main-content">
-            <section class="about">
-                <h2 class="section-title">Sobre Mim</h2>
-                <p>Estou em busca de uma oportunidade de emprego mais direcionada para minha área de estudo, atualmente estou cursando ciência da computação.
+                <p class="hero-typed reveal">
+                    <span class="mono">&gt;</span> <span id="typed"></span><span class="caret">|</span>
                 </p>
-            </section>
-            
-            <section class="experience">
-                <h2 class="section-title">Experiência Profissional</h2>
-                
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-icon">
-                            <i class="fas fa-briefcase"></i>
-                        </div>
-                        <div class="timeline-date">Setembro 2023 até Novembro de 2024</div>
-                        <h3 class="timeline-title">Cargo Anterior - Estágiario</h3>
-                        <p class="timeline-subtitle">Imobiliária Remax Thema </p>
-                        <div class="timeline-text">
-                            <ul>
-                                <li>Funções – Atendimento ao Publico presencial e telefônico, conferência de documentos 
-                                    contratuais, consulta de certidões de clientes, atualização do cadastro de imóveis, 
-                                    monitoramento de prazos e controle de suprimentos.  
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-icon">
-                            <i class="fas fa-briefcase"></i>
-                        </div>
-                        <div class="timeline-date">Novembro 2024 até Setembro 2025</div>
-                        <h3 class="timeline-title">Cargo Anterior - Estágiario</h3>
-                        <p class="timeline-subtitle">HUB de Piracicaba - EEP</p>
-                        <div class="timeline-text">
-                            <ul>
-                                <li>Funções - Atendimento ao público, Gerenciamento de Planilha, Tour com novos integrantes, 
-                                    Fazer posts nas redes sociais do HUB, Repositor da mesa de suprimentos e Cadastro de novos 
-                                    usuários do HUB.  
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-icon">
-                            <i class="fas fa-briefcase"></i>
-                        </div>
-                        <div class="timeline-date">Agosto 2025</div>
-                        <h3 class="timeline-title">Cargo Atual - Tecnico em Suporte Junior</h3>
-                        <p class="timeline-subtitle">ACH Dimensão Informatica e Contabil LTDA</p>
-                        <div class="timeline-text">
-                            <ul>
-                                <li>Funções - Assistencia e Suporte técnico remoto ao portal da transparencia, banco de dados e relatorios no 
-                                    iReport ou JasperSoft.
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                        
-                </div>
-            </section>
-            
-            <section class="education">
-                <h2 class="section-title">Formação Acadêmica</h2>
-                
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="timeline-date">Janeiro 2024 até Janeiro de 2028</div>
-                        <h3 class="timeline-title">Ciência da Computação</h3>
-                        <p class="timeline-subtitle">EEP – Escola de Engenharia de Piracicaba </p>
-                        <div class="timeline-text">
-                            <p>Ainda cursando Ciência da Computação.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="timeline-date">Janeiro de 2012 até Dezembro de 2023</div>
-                        <h3 class="timeline-title">Ensino fundamental 1, 2 e Ensino Médio</h3>
-                        <p class="timeline-subtitle">Colégio Metodista Piracicabano</p>
-                        <div class="timeline-text">
-                            <p>Ensino básico concluído.</p>
-                        </div>
-                    </div>
+                <p class="hero-sub reveal">
+                    Estudante de Ciência da Computação na EEP, atuando com suporte técnico,
+                    banco de dados e relatórios. Piracicaba – SP.
+                </p>
+                <div class="hero-buttons reveal">
+                    <a href="#contato" class="btn btn-primary magnetic">
+                        <i class="fa-solid fa-paper-plane"></i> Fale comigo
+                    </a>
+                    <button class="btn btn-ghost magnetic" id="printBtn">
+                        <i class="fa-solid fa-print"></i> Imprimir / PDF
+                    </button>
                 </div>
 
-                <br>
-                <br>
-
-                <h2 class="section-title">Cursos Extracurriculares</h2>
-                
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="timeline-date">Concluído 2022</div>
-                        <h3 class="timeline-title">Operador de Microcomputador</h3>
-                        <p class="timeline-subtitle">SENAI - Mario Henrique Simonsen</p>
-                        <div class="timeline-text">
-                            <p>Curso com duração de 160 horas presencial.</p>
-                        </div>
+                <div class="stats reveal">
+                    <div class="stat">
+                        <strong data-count="4">0</strong>
+                        <span>experiências</span>
                     </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="timeline-date">Concluído 2022</div>
-                        <h3 class="timeline-title">Implantação de Serviços em Nuvem - Google Cloud Foundations</h3>
-                        <p class="timeline-subtitle">SENAI Mario Dedini</p>
-                        <div class="timeline-text">
-                            <p>Curso com duração de 40 horas presencial.</p>
-                        </div>
+                    <div class="stat">
+                        <strong data-count="280" data-suffix="h+">0</strong>
+                        <span>em cursos</span>
                     </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="timeline-date">Concluído 2022</div>
-                        <h3 class="timeline-title">Manutenção de Microcomputadores</h3>
-                        <p class="timeline-subtitle">SENAC Piracicaba</p>
-                        <div class="timeline-text">
-                            <p>Curso com duração de 40 horas presencial.</p>
-                        </div>
+                    <div class="stat">
+                        <strong data-count="6" data-suffix="º">0</strong>
+                        <span>semestre</span>
                     </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="timeline-date">Concluído 2022</div>
-                        <h3 class="timeline-title">ROBOMIND - Robótica Educacional</h3>
-                        <p class="timeline-subtitle">Colégio Metodista Piracicabano</p>
-                        <div class="timeline-text">
-                            <p>Curso com duração de 40.5 horas presencial.</p>
-                        </div>
-                    </div>
-
                 </div>
-            </section>
-            
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/davi-pereira-b37233283/" class="social-link">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://github.com/Scramjat" class="social-link">
-                    <i class="fab fa-github"></i>
-                </a>
             </div>
-        </main>
-    </div>
+
+            <!-- Card estilo editor de código -->
+            <div class="code-card reveal tilt" aria-label="Resumo em formato de código">
+                <div class="code-head">
+                    <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                    <span class="code-file">davi.js</span>
+                </div>
+<pre class="code-body"><code><span class="k">const</span> <span class="v">davi</span> = {
+  <span class="p">nome</span>: <span class="s">"Davi Pereira"</span>,
+  <span class="p">idade</span>: <span class="n">20</span>,
+  <span class="p">cidade</span>: <span class="s">"Piracicaba - SP"</span>,
+  <span class="p">curso</span>: <span class="s">"Ciência da Computação"</span>,
+  <span class="p">formatura</span>: <span class="n">2028</span>,
+  <span class="p">cargoAtual</span>: <span class="s">"Assistente de Processos"</span>,
+  <span class="p">stack</span>: [<span class="s">"HTML"</span>, <span class="s">"CSS"</span>, <span class="s">"JS"</span>, <span class="s">"C"</span>, <span class="s">"PHP"</span>],
+  <span class="p">idiomas</span>: { <span class="p">en</span>: <span class="s">"básico"</span>, <span class="p">es</span>: <span class="s">"muito básico"</span> },
+  <span class="f">contratar</span>() {
+    <span class="k">return</span> <span class="b">true</span>; <span class="c">// 😉</span>
+  }
+};</code></pre>
+            </div>
+
+            <a href="#sobre" class="scroll-hint" aria-label="Rolar para baixo">
+                <span class="mouse"><span class="wheel"></span></span>
+            </a>
+        </section>
+
+        <!-- SOBRE -->
+        <section class="section" id="sobre">
+            <div class="section-head reveal">
+                <span class="section-num">01</span>
+                <h2>Sobre mim</h2>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p>
+                        Sou estudante de <strong>Ciência da Computação</strong> na Escola de Engenharia de Piracicaba,
+                        no sexto semestre, indo para o sétimo. Trabalho com <strong>geração de relatórios via banco de dados</strong>,
+                        análise de inconsistências e correção de bugs em sistemas. Tenho experiência sólida com
+                        atendimento ao público, organização e suporte técnico — e busco crescer cada vez mais na área de tecnologia.
+                    </p>
+                    <p>
+                        Meu objetivo é construir uma carreira sólida em tecnologia e, para isso, tenho interesse em
+                        <strong>começar pela base em uma empresa de grande porte</strong>. Acredito que um ambiente maior
+                        oferece mais oportunidades de aprendizado, contato com diferentes áreas e possibilidades reais de
+                        <strong>crescimento profissional</strong> — e estou disposto a me dedicar para evoluir a cada etapa.
+                    </p>
+                </div>
+
+                <div class="info-cards">
+                    <div class="info-card card reveal">
+                        <i class="fa-solid fa-cake-candles"></i>
+                        <div><small>Idade</small><span>20 anos</span></div>
+                    </div>
+                    <div class="info-card card reveal">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div><small>Localização</small><span>Vila Monteiro, Piracicaba – SP</span></div>
+                    </div>
+                    <div class="info-card card reveal">
+                        <i class="fa-solid fa-clock"></i>
+                        <div><small>Disponibilidade</small><span>Período diurno</span></div>
+                    </div>
+                    <div class="info-card card reveal">
+                        <i class="fa-solid fa-user"></i>
+                        <div><small>Estado civil</small><span>Solteiro</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIÊNCIA -->
+        <section class="section" id="experiencia">
+            <div class="section-head reveal">
+                <span class="section-num">02</span>
+                <h2>Histórico profissional</h2>
+            </div>
+
+            <div class="filters reveal" role="group" aria-label="Filtrar experiências">
+                <button class="chip active" data-filter="all">Todas</button>
+                <button class="chip" data-filter="tech">Tecnologia</button>
+                <button class="chip" data-filter="adm">Atendimento &amp; Adm.</button>
+            </div>
+
+            <ol class="timeline">
+                <li class="tl-item reveal" data-cat="tech">
+                    <span class="tl-dot current"></span>
+                    <article class="card tl-card">
+                        <header>
+                            <div>
+                                <h3>Assistente de Processos</h3>
+                                <p class="company">RKM – Soluções e Sistemas</p>
+                            </div>
+                            <span class="badge badge-live">Atual</span>
+                        </header>
+                        <ul class="tasks">
+                            <li>Geração de relatórios via banco de dados</li>
+                            <li>Resolução e geração de relatórios de inconsistência</li>
+                            <li>Correção de bugs e localização de erros no código do sistema</li>
+                        </ul>
+                        <div class="tags"><span>Banco de dados</span><span>Relatórios</span><span>Debug</span></div>
+                    </article>
+                </li>
+
+                <li class="tl-item reveal" data-cat="tech">
+                    <span class="tl-dot"></span>
+                    <article class="card tl-card">
+                        <header>
+                            <div>
+                                <h3>Técnico em Suporte Júnior</h3>
+                                <p class="company">ACH Dimensão Informática e Contábil LTDA</p>
+                            </div>
+                            <span class="badge">2025</span>
+                        </header>
+                        <ul class="tasks">
+                            <li>Assistência e suporte técnico remoto ao Portal da Transparência</li>
+                            <li>Suporte a banco de dados</li>
+                            <li>Relatórios no iReport e JasperSoft</li>
+                        </ul>
+                        <div class="tags"><span>Suporte</span><span>iReport</span><span>JasperSoft</span></div>
+                    </article>
+                </li>
+
+                <li class="tl-item reveal" data-cat="adm">
+                    <span class="tl-dot"></span>
+                    <article class="card tl-card">
+                        <header>
+                            <div>
+                                <h3>Estagiário</h3>
+                                <p class="company">HUB Piracicaba / NAGI</p>
+                            </div>
+                            <span class="badge">Nov 2024 – 2025</span>
+                        </header>
+                        <ul class="tasks">
+                            <li>Atendimento ao público e cadastro de novos usuários</li>
+                            <li>Gerenciamento de planilhas</li>
+                            <li>Tour com novos integrantes</li>
+                            <li>Posts nas redes sociais do HUB</li>
+                            <li>Reposição da mesa de suprimentos</li>
+                        </ul>
+                        <div class="tags"><span>Atendimento</span><span>Planilhas</span><span>Redes sociais</span></div>
+                    </article>
+                </li>
+
+                <li class="tl-item reveal" data-cat="adm">
+                    <span class="tl-dot"></span>
+                    <article class="card tl-card">
+                        <header>
+                            <div>
+                                <h3>Estagiário</h3>
+                                <p class="company">Imobiliária Remax Thema</p>
+                            </div>
+                            <span class="badge">Set 2023 – Nov 2024</span>
+                        </header>
+                        <ul class="tasks">
+                            <li>Atendimento ao público presencial e telefônico</li>
+                            <li>Conferência de documentos contratuais</li>
+                            <li>Consulta de certidões de clientes</li>
+                            <li>Atualização do cadastro de imóveis</li>
+                            <li>Monitoramento de prazos e controle de suprimentos</li>
+                        </ul>
+                        <div class="tags"><span>Atendimento</span><span>Documentação</span><span>Organização</span></div>
+                    </article>
+                </li>
+            </ol>
+        </section>
+
+        <!-- FORMAÇÃO -->
+        <section class="section" id="formacao">
+            <div class="section-head reveal">
+                <span class="section-num">03</span>
+                <h2>Formação acadêmica</h2>
+            </div>
+
+            <div class="edu-grid">
+                <article class="card edu-card reveal tilt">
+                    <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h3>Ciência da Computação</h3>
+                    <p class="company">EEP – Escola de Engenharia de Piracicaba</p>
+                    <div class="edu-progress">
+                        <div class="edu-progress-head">
+                            <span>Graduação em andamento</span>
+                            <span>Previsão: 2028</span>
+                        </div>
+                        <div class="bar"><span class="bar-fill" data-level="75"></span></div>
+                        <small>6º semestre concluindo, indo para o 7º</small>
+                    </div>
+                </article>
+
+                <article class="card edu-card reveal tilt">
+                    <div class="edu-icon"><i class="fa-solid fa-school"></i></div>
+                    <h3>Ensino Médio</h3>
+                    <p class="company">Colégio Metodista Piracicabano</p>
+                    <div class="edu-progress">
+                        <div class="edu-progress-head">
+                            <span>Concluído</span>
+                            <span>Dez 2023</span>
+                        </div>
+                        <div class="bar"><span class="bar-fill" data-level="100"></span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- CURSOS -->
+        <section class="section" id="cursos">
+            <div class="section-head reveal">
+                <span class="section-num">04</span>
+                <h2>Cursos extracurriculares</h2>
+            </div>
+
+            <div class="course-grid">
+                <article class="card course reveal">
+                    <span class="course-hours">160h</span>
+                    <i class="fa-solid fa-desktop course-icon"></i>
+                    <h3>Operador de Microcomputador</h3>
+                    <p>SENAI Mario Henrique Simonsen</p>
+                    <small>Presencial · 2022</small>
+                </article>
+
+                <article class="card course reveal">
+                    <span class="course-hours">40h</span>
+                    <i class="fa-solid fa-cloud course-icon"></i>
+                    <h3>Implantação de Serviços em Nuvem – Google Cloud Foundations</h3>
+                    <p>SENAI Mario Dedini</p>
+                    <small>Presencial · 2022</small>
+                </article>
+
+                <article class="card course reveal">
+                    <span class="course-hours">40h</span>
+                    <i class="fa-solid fa-screwdriver-wrench course-icon"></i>
+                    <h3>Manutenção de Microcomputadores</h3>
+                    <p>SENAC Piracicaba</p>
+                    <small>Presencial · 2022</small>
+                </article>
+
+                <article class="card course reveal">
+                    <span class="course-hours">40,5h</span>
+                    <i class="fa-solid fa-robot course-icon"></i>
+                    <h3>Módulo Explorer Curiosity</h3>
+                    <p>ROBOMIND – Robótica Educacional</p>
+                    <small>Presencial · 2022</small>
+                </article>
+
+                <article class="card course reveal">
+                    <span class="course-hours">EAD</span>
+                    <i class="fa-solid fa-route course-icon"></i>
+                    <h3>Trilha do Conhecimento</h3>
+                    <p>Fundação Bradesco – Escola Virtual</p>
+                    <small>Atendimento ao Público · Desenvolvimento Profissional · Organização Pessoal</small>
+                </article>
+            </div>
+        </section>
+
+        <!-- HABILIDADES -->
+        <section class="section" id="habilidades">
+            <div class="section-head reveal">
+                <span class="section-num">05</span>
+                <h2>Habilidades &amp; competências</h2>
+            </div>
+
+            <div class="skills-grid">
+                <div class="card skills-card reveal">
+                    <h3><i class="fa-solid fa-code"></i> Programação</h3>
+                    <p class="muted">Conhecimento básico — passe o mouse ou toque para ver mais.</p>
+                    <div class="tech-list">
+                        <button class="tech" data-info="Estrutura de páginas web — inclusive esta!"><i class="fa-brands fa-html5"></i> HTML</button>
+                        <button class="tech" data-info="Estilização, layouts responsivos e animações."><i class="fa-brands fa-css3-alt"></i> CSS</button>
+                        <button class="tech" data-info="Interatividade no navegador (tema, animações, filtros…)."><i class="fa-brands fa-js"></i> JavaScript</button>
+                        <button class="tech" data-info="Linguagem estudada na graduação: lógica e estruturas de dados."><i class="fa-solid fa-c"></i> C</button>
+                        <button class="tech" data-info="Desenvolvimento back-end para web."><i class="fa-brands fa-php"></i> PHP</button>
+                        <button class="tech" data-info="Relatórios via banco de dados no dia a dia de trabalho."><i class="fa-solid fa-database"></i> Banco de dados</button>
+                        <button class="tech" data-info="Criação de relatórios com iReport / JasperSoft."><i class="fa-solid fa-file-lines"></i> iReport / Jasper</button>
+                    </div>
+                    <p class="tech-info" id="techInfo" aria-live="polite">Selecione uma tecnologia ✨</p>
+                </div>
+
+                <div class="card skills-card reveal">
+                    <h3><i class="fa-solid fa-language"></i> Idiomas</h3>
+                    <div class="lang">
+                        <div class="lang-head"><span>Português</span><span>Fluente</span></div>
+                        <ol class="level-scale" data-current="5" aria-label="Nível de português: Fluente">
+                            <li>Muito básico</li>
+                            <li>Básico</li>
+                            <li>Intermediário</li>
+                            <li>Avançado</li>
+                            <li>Fluente</li>
+                        </ol>
+                    </div>
+                    <div class="lang">
+                        <div class="lang-head"><span>Inglês</span><span>Básico</span></div>
+                        <ol class="level-scale" data-current="2" aria-label="Nível de inglês: Básico">
+                            <li>Muito básico</li>
+                            <li>Básico</li>
+                            <li>Intermediário</li>
+                            <li>Avançado</li>
+                            <li>Fluente</li>
+                        </ol>
+                    </div>
+                    <div class="lang">
+                        <div class="lang-head"><span>Espanhol</span><span>Muito básico</span></div>
+                        <ol class="level-scale" data-current="1" aria-label="Nível de espanhol: Muito básico">
+                            <li>Muito básico</li>
+                            <li>Básico</li>
+                            <li>Intermediário</li>
+                            <li>Avançado</li>
+                            <li>Fluente</li>
+                        </ol>
+                    </div>
+
+                    <h3 class="mt"><i class="fa-solid fa-briefcase"></i> Ferramentas &amp; soft skills</h3>
+                    <div class="tags big">
+                        <span><i class="fa-solid fa-file-word"></i> Word</span>
+                        <span><i class="fa-solid fa-file-excel"></i> Excel</span>
+                        <span>Atendimento ao público</span>
+                        <span>Organização</span>
+                        <span>Suporte técnico</span>
+                        <span>Trabalho em equipe</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTATO -->
+        <section class="section contact" id="contato">
+            <div class="contact-box card reveal">
+                <h2>Vamos conversar? <span class="wave">👋</span></h2>
+                <p>Estou aberto a novas oportunidades na área de tecnologia. Escolha o canal preferido:</p>
+
+                <div class="contact-quick">
+                    <button class="copy-pill" data-copy="davioliveirapereira05@gmail.com">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>davioliveirapereira05@gmail.com</span>
+                        <i class="fa-regular fa-copy copy-icon"></i>
+                    </button>
+                    <button class="copy-pill" data-copy="+55 (19) 99908-7733">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+55 (19) 99908-7733</span>
+                        <i class="fa-regular fa-copy copy-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- RODAPÉ com botões de redirecionamento -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a class="social magnetic" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=davioliveirapereira05@gmail.com" target="_blank" rel="noopener" data-label="E-mail" aria-label="Enviar e-mail pelo Gmail">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a class="social magnetic" href="https://wa.me/5519999087733" target="_blank" rel="noopener" data-label="WhatsApp" aria-label="WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a class="social magnetic" href="https://github.com/Scramjat" target="_blank" rel="noopener" data-label="GitHub" aria-label="GitHub">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <a class="social magnetic" href="https://www.linkedin.com/in/davi-pereira-b37233283" target="_blank" rel="noopener" data-label="LinkedIn" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+        </div>
+        <p class="footer-hint">Dica: pressione <kbd>T</kbd> para trocar o tema</p>
+    </footer>
+
+    <!-- Voltar ao topo -->
+    <button class="to-top" id="toTop" aria-label="Voltar ao topo">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Toast -->
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
-
